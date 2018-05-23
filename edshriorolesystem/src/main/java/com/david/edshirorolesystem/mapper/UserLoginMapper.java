@@ -1,32 +1,30 @@
 package com.david.edshirorolesystem.mapper;
 
+import com.david.edshirorolesystem.po.Userlogin;
+import com.david.edshirorolesystem.po.UserloginExample;
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 
-import com.david.edshirorolesystem.po.UserLogin;
-import com.david.edshirorolesystem.po.UserloginExample;
+public interface UserloginMapper {
+    int countByExample(UserloginExample example);
 
-public interface UserLoginMapper {
-	int countByExample(UserloginExample example);
+    int deleteByExample(UserloginExample example);
 
-	int deleteByExample(UserloginExample example);
+    int deleteByPrimaryKey(Integer userid);
 
-	int deleteByPrimaryKey(Integer userid);
+    int insert(Userlogin record);
 
-	int insert(UserLogin record);
+    int insertSelective(Userlogin record);
 
-	int insertSelective(UserLogin record);
+    List<Userlogin> selectByExample(UserloginExample example);
 
-	List<UserLogin> selectByExample(UserloginExample example);
+    Userlogin selectByPrimaryKey(Integer userid);
 
-	UserLogin selectByPrimaryKey(Integer userid);
+    int updateByExampleSelective(@Param("record") Userlogin record, @Param("example") UserloginExample example);
 
-	int updateByExampleSelective(@Param("record") UserLogin record, @Param("example") UserloginExample example);
+    int updateByExample(@Param("record") Userlogin record, @Param("example") UserloginExample example);
 
-	int updateByExample(@Param("record") UserLogin record, @Param("example") UserloginExample example);
+    int updateByPrimaryKeySelective(Userlogin record);
 
-	int updateByPrimaryKeySelective(UserLogin record);
-
-	int updateByPrimaryKey(UserLogin record);
+    int updateByPrimaryKey(Userlogin record);
 }

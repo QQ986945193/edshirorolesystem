@@ -2,11 +2,11 @@ package com.david.edshirorolesystem.service.impl;
 
 import java.util.List;
 
+import com.david.edshirorolesystem.mapper.UserloginMapper;
+import com.david.edshirorolesystem.po.Userlogin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.david.edshirorolesystem.mapper.UserLoginMapper;
-import com.david.edshirorolesystem.po.UserLogin;
 import com.david.edshirorolesystem.po.UserloginExample;
 import com.david.edshirorolesystem.service.UserLoginService;
 
@@ -21,17 +21,17 @@ import com.david.edshirorolesystem.service.UserLoginService;
 public class UserLoginServiceImpl implements UserLoginService {
 
 	@Autowired
-	private UserLoginMapper userLoginMapper;
+	private UserloginMapper userLoginMapper;
 
 	/***
 	 * 根据用户名查找用户
 	 */
 	@Override
-	public UserLogin findByName(String username) {
+	public Userlogin findByName(String username) {
 		UserloginExample userloginExample = new UserloginExample();
 		UserloginExample.Criteria criteria = userloginExample.createCriteria();
 		criteria.andUsernameEqualTo(username);
-		List<UserLogin> list = userLoginMapper.selectByExample(userloginExample);
+		List<Userlogin> list = userLoginMapper.selectByExample(userloginExample);
 		if (list != null && list.size() > 0) {
 			return list.get(0);
 		}

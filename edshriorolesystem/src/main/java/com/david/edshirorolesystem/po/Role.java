@@ -1,40 +1,33 @@
 package com.david.edshirorolesystem.po;
 
-/**
- * 角色
- * 
- * @author ：david
- * @新浪微博 ：http://weibo.com/mcxiaobing
- * @github: https://github.com/QQ986945193
- */
 public class Role {
-	private Integer roleid;
+    private Integer roleid;
 
-	private String rolename;
+    private String rolename;
 
-	private String permissions;
+    private String permissions;
 
-	public Integer getRoleid() {
-		return roleid;
-	}
+    public Integer getRoleid() {
+        return roleid;
+    }
 
-	public void setRoleid(Integer roleid) {
-		this.roleid = roleid;
-	}
+    public void setRoleid(Integer roleid) {
+        this.roleid = roleid;
+    }
 
-	public String getRolename() {
-		return rolename;
-	}
+    public String getRolename() {
+        return rolename;
+    }
 
-	public void setRolename(String rolename) {
-		this.rolename = rolename == null ? null : rolename.trim();
-	}
+    public void setRolename(String rolename) {
+        this.rolename = rolename == null ? null : rolename.trim();
+    }
 
-	public String getPermissions() {
-		return permissions;
-	}
+    public String getPermissions() {
+        return permissions;
+    }
 
-	public void setPermissions(String permissions) {
-		this.permissions = permissions == null ? null : permissions.trim();
-	}
+    public void setPermissions(String permissions) {
+        this.permissions = permissions == null ? null : permissions.trim();
+    }
 }

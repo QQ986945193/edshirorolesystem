@@ -58,7 +58,7 @@
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <!--配置自定义Realm-->
         <!--loginRealm 使用扫描器扫描注册成功了-->
-        <property name="realm" ref="MyRealm" />
+        <property name="realm" ref="myRealm" />
         <!-- <property name="sessionMode" value="native"/> -->
     </bean>
     <!-- 生命周期 -->

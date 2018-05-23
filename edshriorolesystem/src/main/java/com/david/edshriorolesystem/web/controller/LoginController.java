@@ -1,12 +1,12 @@
 package com.david.edshriorolesystem.web.controller;
 
+import com.david.edshirorolesystem.po.Userlogin;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.david.edshirorolesystem.po.UserLogin;
 
 /**
  * 登录的controller
@@ -29,7 +29,7 @@ public class LoginController {
 	 * Post 方式，登录的功能请求
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(UserLogin userLogin) {
+	public String login(Userlogin userLogin) {
 		// shiro实现登录
 		UsernamePasswordToken token = new UsernamePasswordToken(userLogin.getUsername(), userLogin.getPassword());
 		org.apache.shiro.subject.Subject subject = SecurityUtils.getSubject();
@@ -47,7 +47,7 @@ public class LoginController {
 		} catch (Exception e) {
 			return "login";
 		}
-		return null;
+		return "login";
 
 	}
 

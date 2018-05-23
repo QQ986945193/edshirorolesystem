@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.annotation.Resource;
 
+import com.david.edshirorolesystem.po.Userlogin;
+import com.david.edshirorolesystem.service.RoleService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -18,7 +20,6 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.stereotype.Component;
 
 import com.david.edshirorolesystem.po.Role;
-import com.david.edshirorolesystem.po.UserLogin;
 import com.david.edshirorolesystem.service.UserLoginService;
 
 /**
@@ -42,7 +43,7 @@ public class MyRealm extends AuthorizingRealm {
 		String username = (String) token.getPrincipal();
 		//密码
 		String password = new String((char[]) token.getCredentials());
-		UserLogin userLogin = null;
+		Userlogin userLogin = null;
 		try {
 			userLogin = userLoginService.findByName(username);
 			if (userLogin == null) {
@@ -69,7 +70,7 @@ public class MyRealm extends AuthorizingRealm {
 		String username = (String) getAvailablePrincipal(principalCollection);
 		Role role = null;
 		try {
-			UserLogin userLogin = userLoginService.findByName(username);
+			Userlogin userLogin = userLoginService.findByName(username);
 			//获取角色对象
 			role = roleService.findById(userLogin.getRole());
 			// 通过用户名从数据库中获取权限/角色信息
@@ -77,8 +78,8 @@ public class MyRealm extends AuthorizingRealm {
 			Set<String> roles = new HashSet<>();
 			if (role!=null) {
 				roles.add(role.getRolename());
-				info.setRoles(roles);
 			}
+			info.setRoles(roles);
 			return info;
 		} catch (Exception e) {
 			return null;
