@@ -4,7 +4,9 @@ import com.david.edshirorolesystem.po.Userlogin;
 import com.david.edshirorolesystem.po.UserloginExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserloginMapper {
     int countByExample(UserloginExample example);
 

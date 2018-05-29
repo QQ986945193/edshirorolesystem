@@ -35,7 +35,7 @@
         <property name="converters">
             <set>
                 <!-- 日期类型转换 -->
-                <bean class="com.david.edshriorolesystem.web.converter.CustomDateConverter"/>
+                <bean class="com.david.edshirorolesystem.web.converter.CustomDateConverter"/>
             </set>
         </property>
     </bean>
@@ -44,7 +44,7 @@
     并注册添加到 spring 容器中
     这里扫描 controller，指定controller的包
     -->
-    <context:component-scan base-package="com.david.edshriorolesystem.web.controller"/>
+    <context:component-scan base-package="com.david.edshirorolesystem"/>
 
     <!--全局错误信息处理器
     只要实现HandlerExceptionResolver接口就是全局异常处理器

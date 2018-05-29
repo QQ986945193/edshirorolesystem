@@ -4,7 +4,9 @@ import com.david.edshirorolesystem.po.Role;
 import com.david.edshirorolesystem.po.RoleExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface RoleMapper {
     int countByExample(RoleExample example);
 

@@ -4,7 +4,9 @@ import com.david.edshirorolesystem.po.Selectedcourse;
 import com.david.edshirorolesystem.po.SelectedcourseExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SelectedcourseMapper {
     int countByExample(SelectedcourseExample example);
 

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * 角色权限
  */
-@Service(value = "roleService")
+@Service
 public class RoleServiceImpl implements RoleService {
 
     @Autowired

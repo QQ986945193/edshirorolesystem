@@ -17,7 +17,7 @@ import com.david.edshirorolesystem.service.UserLoginService;
  * @新浪微博 ：http://weibo.com/mcxiaobing
  * @github: https://github.com/QQ986945193
  */
-@Service(value = "userLoginService")
+@Service
 public class UserLoginServiceImpl implements UserLoginService {
 
 	@Autowired

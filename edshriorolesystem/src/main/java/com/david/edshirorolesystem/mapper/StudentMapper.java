@@ -4,7 +4,9 @@ import com.david.edshirorolesystem.po.Student;
 import com.david.edshirorolesystem.po.StudentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface StudentMapper {
     int countByExample(StudentExample example);
 

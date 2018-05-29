@@ -4,7 +4,9 @@ import com.david.edshirorolesystem.po.College;
 import com.david.edshirorolesystem.po.CollegeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CollegeMapper {
     int countByExample(CollegeExample example);
 

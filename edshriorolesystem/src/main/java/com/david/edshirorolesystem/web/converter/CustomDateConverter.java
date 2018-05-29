@@ -1,4 +1,4 @@
-package com.david.edshriorolesystem.web.converter;
+package com.david.edshirorolesystem.web.converter;
 
 import org.springframework.core.convert.converter.Converter;
 
